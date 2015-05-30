@@ -1,0 +1,45 @@
+/*
+ * Fontes usadas no logo e web de NQysit
+ */
+
+@font-face {
+    font-family: orbitron_black;
+    src: url("../nqfonts/orbitron_black.otf");
+}
+
+@font-face {
+    font-family: orbitron_bold;
+    src: url("../nqfonts/orbitron_bold.otf");
+}
+
+@font-face {
+    font-family: orbitron_light;
+    src: url("../nqfonts/orbitron_light.otf");
+}
+
+@font-face {
+    font-family: orbitron_medium;
+    src: url("../nqfonts/orbitron_medium.otf");
+}
+
+.orbitron {
+    font-family: orbitron_medium;
+}
+
+.orbitron_black {
+    font-family: orbitron_black;
+}
+
+.orbitron_bold {
+    font-family: orbitron_bold;
+}
+
+.orbitron_light {
+    font-family: orbitron_light;
+}
+
+.nq {
+    font-family: orbitron_medium;
+    color: #006600;
+    font-style: italic;
+}

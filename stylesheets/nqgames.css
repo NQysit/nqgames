@@ -1,0 +1,159 @@
+/*******************************************************************************
+NQgames Custom Styles
+*******************************************************************************/
+
+.header-inline {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 1em;
+}
+
+.logo {
+  border: 0px;
+  box-shadow: none;
+}
+
+.workarea {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.menubtn {
+	background: #585858;	
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:12px 25px;
+	text-decoration:none;
+	cursor:pointer;
+	display:inline-block;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	border:solid 1px #585858;
+	text-shadow:0px -1px 0px rgba(0, 0, 0, 0.4);
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);	
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.5, #585858), color-stop(1, #292929));
+	background:-moz-linear-gradient(top, #585858 50%, #292929 100%);
+	background:-webkit-linear-gradient(top, #585858 50%, #292929 100%);
+	background:-o-linear-gradient(top, #585858 50%, #292929 100%);
+	background:-ms-linear-gradient(top, #585858 50%, #292929 100%);
+	background:linear-gradient(to bottom, #585858 50%, #292929 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#585858', endColorstr='#292929',GradientType=0);
+	background-color:#585858;
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+}
+
+.menubtn:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.5, #006600), color-stop(1, #004400));
+	background:-moz-linear-gradient(top, #006600 50%, #004400 100%);
+	background:-webkit-linear-gradient(top, #006600 50%, #004400 100%);
+	background:-o-linear-gradient(top, #006600 50%, #004400 100%);
+	background:-ms-linear-gradient(top, #006600 50%, #004400 100%);
+	background:linear-gradient(to bottom, #006600 50%, #004400 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#006600', endColorstr='#004400',GradientType=0);
+	background-color:#006600;
+}
+
+.menubtn:active {
+	position:relative;
+	top:1px;	
+}
+
+button[disabled=disabled], button:disabled {
+    pointer-events: none;
+	background: #ddd;
+	color: #aaa;
+}
+
+.menuicon {
+	font-size: 20px;
+	padding: 6px;
+	margin-left: 5px;	
+}
+
+.scoreTable {
+	display: table;	
+  	border-spacing: 10px;
+}
+
+.scoreBoard {
+	display:table-row;
+	width: 100%;
+}
+
+.playerScoreBoard {
+	display: table-cell;
+	width: 250px;
+}
+
+.remainingScoreBoard {
+	display: table-cell;
+	width: 250px;
+}
+
+.remainingDiv {
+	background-color: #585858;
+	color: #ffffff;
+}
+
+/*
+nqares
+*/
+
+
+.p1{
+	background-color:#33BB33;
+}
+.p2{
+	background-color:#BB3333;	
+}
+
+.row{
+	display:table-row;
+}
+.cell{
+	display:table-cell;
+}
+.punto{
+	width:5px;
+	height: 5px;
+	background-color: #000;
+	display:table-cell;
+}
+.cc{
+	width: 50px;
+	height:50px;
+	opacity: 0.1;
+	background-color:#222;
+	display:table-cell;
+}
+.lh{
+	width: 50px;
+	height:5px;
+	display:table-cell;
+}
+.lv{
+	width: 5px;
+	height:50px;
+	display:table-cell;
+}
+.marcadores{
+	width: 200px;
+	display:table-cell;
+	padding: 20px;
+}
+.turno{
+	width:10px;
+	height:10px;
+}
