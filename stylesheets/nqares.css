@@ -1,0 +1,43 @@
+/*
+nqares
+*/
+
+.p1{
+	background-color:#33BB33;
+}
+.p2{
+	background-color:#BB3333;	
+}
+
+.row{
+	display:table-row;
+}
+.cell{
+	display:table-cell;
+}
+.punto{
+	width:5px;
+	height: 5px;
+	background-color: #000;
+	display:table-cell;
+    border-radius: 5px;
+}
+.cc{
+	width: 50px;
+	height:50px;
+	opacity: 0.1;
+	background-color:#222;
+	display:table-cell;
+}
+.lh{
+	width: 50px;
+	height:10px;
+	display:table-cell;
+    border-radius: 5px;
+}
+.lv{
+	width: 10px;
+	height:50px;
+	display:table-cell;
+    border-radius: 5px;
+}

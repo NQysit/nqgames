@@ -12,7 +12,6 @@ function Tablero(ancho, alto)
     
     this.matriz = new Array(); 
     
-    this.turno = 'p1';
     this.puntosp1 = 0;
     this.puntosp2 = 0;
     this.restantes = ancho * alto;
@@ -134,7 +133,7 @@ function Tablero(ancho, alto)
 			var cuad = this.compruebaCuadrados(inicio, fin);
 			if( cuad == 0)
 			{
-				this.cambiaTurno();
+				swapTurn();
 			}
 			else
 			{				
@@ -147,31 +146,13 @@ function Tablero(ancho, alto)
 	}
 	
 	this.marcaLinea = function (inicio, fin)
-	{		
-		var clase = this.matriz[inicio][fin].getClase() +" " + this.turno;
-		this.matriz[inicio][fin].setClase(clase);
-		document.getElementById(inicio + '-' + fin).setAttribute("class", clase);
-	}
-	
-	this.cambiaTurno = function()
-	{
-		if(this.turno == 'p1')
-		{
-			this.turno= 'p2';
-			document.getElementById('turnop2').style.visibility = 'visible';
-			document.getElementById('turnop1').style.visibility = 'hidden';
-		}
-		else
-		{
-			this.turno = 'p1';
-			document.getElementById('turnop1').style.visibility = 'visible';
-			document.getElementById('turnop2').style.visibility = 'hidden';
-		}		
+	{	
+		document.getElementById(inicio + '-' + fin).style.backgroundColor = window.turncolor;
 	}
 	
 	this.sumaPuntos = function(n)
 	{
-		if(this.turno == 'p1')
+		if(window.p1turn)
 		{
 			this.puntosp1 += n;
 			document.getElementById('puntosp1').innerHTML = this.puntosp1;
@@ -181,10 +162,6 @@ function Tablero(ancho, alto)
 			this.puntosp2 += n;
 			document.getElementById('puntosp2').innerHTML = this.puntosp2;
 		}
-		/*
-		var puntos = document.getElementById('puntos' + this.turno).innerHTML;
-		document.getElementById('puntos' + this.turno).innerHTML = parseInt(puntos, 10) + n;
-		*/
 	}
 	
 	this.restaRestantes = function(n)
@@ -194,10 +171,10 @@ function Tablero(ancho, alto)
 		document.getElementById('casillasRestantes').innerHTML = parseInt(puntos, 10) - n;
 		*/
 		
-		this.restantes -= n
+		this.restantes -= n;
 		document.getElementById('casillasRestantes').innerHTML = this.restantes;
 		
-		if(this.restantes == 0)
+		if(this.restantes <= 0)
 			this.finalizaPartida();
 	}
 	

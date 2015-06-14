@@ -107,53 +107,38 @@ button[disabled=disabled], button:disabled {
 	color: #ffffff;
 }
 
-/*
-nqares
-*/
-
-
-.p1{
-	background-color:#33BB33;
-}
-.p2{
-	background-color:#BB3333;	
+.playerIcon {
+	font-size: 20pt;
+	width: 50px;
+	vertical-align: middle;
+	text-align: center;
+	min-height: 100px;
 }
 
-.row{
+.playerName {
+	font-size: 18pt;
+	font-style: italic;
+	font-weight: bold;
+}
+
+.playerPoints {
+	font-size: 14pt;
+	font-weight: bold;
+}
+
+.turns {
 	display:table-row;
+	width: 100%;
 }
-.cell{
-	display:table-cell;
+
+.turn {
+	display: table-cell;
+	width: 125px;
 }
-.punto{
-	width:5px;
-	height: 5px;
-	background-color: #000;
-	display:table-cell;
+
+.tablero{
+	padding-top: 10px;
 }
-.cc{
-	width: 50px;
-	height:50px;
-	opacity: 0.1;
-	background-color:#222;
-	display:table-cell;
-}
-.lh{
-	width: 50px;
-	height:5px;
-	display:table-cell;
-}
-.lv{
-	width: 5px;
-	height:50px;
-	display:table-cell;
-}
-.marcadores{
-	width: 200px;
-	display:table-cell;
-	padding: 20px;
-}
-.turno{
-	width:10px;
-	height:10px;
-}
+
+
+
