@@ -19,7 +19,7 @@ window.p2Human = true;
 window.p1turn = true;
 window.turncolor = window.player1_color;
 window.rows = 5;
-window.cols = 5;
+window.cols = 11;
 window.tablero = null;
 
 
@@ -56,6 +56,23 @@ function btnGoSettings(fun) {
 	btn.className = "menubtn menuicon";
 	btn.id = "btnSettings";
 	btn.name = "btnSettings";
+	btn.addEventListener("click", fun, false);
+	btn.game = window.game;
+	
+	return btn;
+}
+
+///<summary>
+///
+///</summary>
+function btnRepeat(fun) {
+	
+	var btn = document.createElement("button");
+	var innerhtml = "<i class='fa fa-repeat'></i>";
+	btn.innerHTML = innerhtml;
+	btn.className = "menubtn menuicon";
+	btn.id = "btnRepeat";
+	btn.name = "btnRepeat";
 	btn.addEventListener("click", fun, false);
 	btn.game = window.game;
 	
@@ -171,7 +188,7 @@ function setGame(evt){
 	
 	switch(window.game) {
 		case 1:
-			alert("1");
+			nqmines1P_set();
 			break;
 		case 2:
 			printConfigureMP();
@@ -272,6 +289,7 @@ function printConfigureMP() {
 	div.appendChild(p);
 		
 	workarea.appendChild(div);
+	
 }
 
 function configureGame() {
@@ -293,6 +311,7 @@ function configureGame() {
 	
 	workarea.appendChild(p);	
 	workarea.appendChild(divScoreBoard());
+	workarea.appendChild(divAlert());
 	
 	var table = document.createElement("div");
 	table.id= "tablero";
@@ -302,19 +321,28 @@ function configureGame() {
 	switch(window.game) {
 		case 2:
 			window.tablero = nqminesMP();
+			window.tablero.presentaTablero();
 			break;
 		case 3:
 			window.tablero = nqaresMP();
+			window.tablero.presentaTablero();
 			break;
 		default:
 			alert("Something wrong happened.");
 			break;
 	}
 	
-	window.tablero.presentaTablero();
-	
-	
 	randomStart();
+}
+
+function divAlert() {
+	
+	var alert = document.createElement("div");
+	alert.id = "divaviso";
+	alert.align = "center";
+	alert.style.width = "100%";
+	
+	return alert;
 }
 
 
@@ -327,7 +355,6 @@ function divScoreBoard() {
 	
 	var name;
 	var points;
-	var img;
 	var turno;
 	var icon;
 	
@@ -417,19 +444,10 @@ function divScoreBoard() {
 	div.appendChild(remaining);
 	div.appendChild(p2);
 	
-	
-	
 	scoreboard.appendChild(div);
 	
 	return scoreboard;	
 }
-
-
-
-
-
-
-
 
 function randomStart() {
 	if(Math.floor((Math.random() * 10) + 1) % 2 == 0)
@@ -439,7 +457,6 @@ function randomStart() {
 		
 	swapTurn();
 }
-
 
 function swapTurn() {
 	if(window.p1turn)
@@ -459,46 +476,31 @@ function swapTurn() {
 }
 
 function nqaresMP() {
-	var toret = new Tablero(parseInt(window.cols, 10), parseInt(window.rows, 10)); 
+	var toret = new TableroNQares(parseInt(window.cols, 10), parseInt(window.rows, 10)); 
 	return toret;
 }
 
 function nqminesMP() {
-	var toret = new Tablero(parseInt(2 * window.cols, 10), parseInt(window.rows, 10)); 
+	var toret = new TableroNQmines(parseInt(window.cols, 10), parseInt(window.rows, 10)); 
 	return toret;
 }
 
-function nqmines1P() {
-	asd();
+function nqmines1P_set() {
+	
+	clearWorkArea();
+	var workarea = document.getElementById("workarea");
+	
+	var p = document.createElement("p");
+	p.align = "left";
+	p.appendChild(btnHome());
+	p.appendChild(btnRepeat(nqmines1P_set));
+	workarea.appendChild(p);
+	
+	window.tablero = new NQmines1P(6);
+	workarea.appendChild(window.tablero.formulario());
+	workarea.appendChild(window.tablero.progreso());
+	window.tablero.draw();
+	window.tablero.inicia();
+	//window.tablero.desvelaMinas();
 }
 
-function printNQares() {
-
-	
-	/*
-	<div id='partida'>
-    			<div class='row'></div>
-          		<div id='tablero' class="cell"></div>
-          		
-          	</div>
-         */
-        
-		/*
-        <script>		
-		var tablero;
-		function creaPartida()
-		{
-			var ancho = 0;
-			var alto = 0;
-			ancho = document.getElementById('valorAncho').value;
-			alto = document.getElementById('valorAlto').value;
-			
-			tablero = new Tablero(parseInt(ancho, 10), parseInt(alto, 10)); 
-			tablero.presentaTablero();
-		}		
-    </script>
-	*/
-	
-	
-	
-}

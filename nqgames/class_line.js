@@ -12,7 +12,7 @@ function Linea(inicio, fin)
     this.clicable = true;
     this.visible = true;
     
-    var clase =''
+    var clase ='';
     var orientacion ='';
     if(fin - inicio == 1)
     {

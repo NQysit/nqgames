@@ -5,7 +5,7 @@
  * @alto representa o número de casillas en vertical
  */
 
-function Tablero(ancho, alto)
+function TableroNQares(ancho, alto)
 {
     this.ancho = ancho; 
     this.alto  = alto;
@@ -180,21 +180,27 @@ function Tablero(ancho, alto)
 	
 	this.finalizaPartida = function()
 	{
-		var msg = "\nPartida terminada!!\n\n";
+		this.finalizado = true;
+	
+		var div = document.createElement("div");
+		div.className = "alert-success";
+		
+		var msg = "<br />Game Over!<br /><br />";
 		
 		if(this.puntosp1 != this.puntosp2)
 		{
-			msg += "Ganador: ";
+			msg += "Winner: <b>";
 			if(this.puntosp1 > this.puntosp2)
-				msg += "Player 1\n\n";
+				msg += window.player1_name +"</b><br />";
 			else
-				msg += "Player 2\n\n";
+				msg += window.player2_name +"</b><br />";
 		}
 		else
-			msg+= "EMPATE!!\n\n";
-		msg += this.puntosp1 + " - " + this.puntosp2;		
+			msg+= "It is a tie!<br />";
+		msg += this.puntosp1 + " - " + this.puntosp2;	
 		
-		alert(msg);
+		div.innerHTML = msg;	
+		document.getElementById("divaviso").appendChild(div);
 	}
 
 
