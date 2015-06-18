@@ -1,4 +1,8 @@
-function cell2p(name){
+/*
+ * class cell for nqmines multiplayer
+ */
+ 
+ function Cell2p(name){
 	
 	this.name = name;
 	
@@ -11,6 +15,5 @@ function cell2p(name){
 		toret += "><div class='mostrar'>&nbsp</div></div>";
 		
 		return toret;
-    }
-	
+    };
 }

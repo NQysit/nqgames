@@ -1,11 +1,9 @@
 /*
- * Clase tablero
- * representa o conxunto de casillas
- * @ancho representa o número de casillas en horizontal
- * @alto representa o número de casillas en vertical
+ * class TableroNQares
+ * represents NQares game
  */
-
-function TableroNQares(ancho, alto)
+ 
+function NQares2p(ancho, alto)
 {
     this.ancho = ancho; 
     this.alto  = alto;
@@ -43,7 +41,7 @@ function TableroNQares(ancho, alto)
 			}
 		}		
 		return toret;
-	}
+	};
     
     //inicialización de matriz       
     this.matriz = this.iniciaArray();
@@ -109,11 +107,11 @@ function TableroNQares(ancho, alto)
 		document.getElementById('casillasRestantes').innerHTML = this.restantes;
 		document.getElementById('puntosp1').innerHTML = this.puntosp1;
 		document.getElementById('puntosp2').innerHTML = this.puntosp2;
-    }
+    };
     
     this.generaRandom = function()
     {
-    }
+    };
     
     //función click
 	//invócase ao clickar nunha liña
@@ -143,12 +141,12 @@ function TableroNQares(ancho, alto)
 			
 			this.matriz[inicio][fin].setClicable(false);
 		}
-	}
+	};
 	
 	this.marcaLinea = function (inicio, fin)
 	{	
 		document.getElementById(inicio + '-' + fin).style.backgroundColor = window.turncolor;
-	}
+	};
 	
 	this.sumaPuntos = function(n)
 	{
@@ -162,7 +160,7 @@ function TableroNQares(ancho, alto)
 			this.puntosp2 += n;
 			document.getElementById('puntosp2').innerHTML = this.puntosp2;
 		}
-	}
+	};
 	
 	this.restaRestantes = function(n)
 	{
@@ -176,7 +174,7 @@ function TableroNQares(ancho, alto)
 		
 		if(this.restantes <= 0)
 			this.finalizaPartida();
-	}
+	};
 	
 	this.finalizaPartida = function()
 	{
@@ -201,7 +199,7 @@ function TableroNQares(ancho, alto)
 		
 		div.innerHTML = msg;	
 		document.getElementById("divaviso").appendChild(div);
-	}
+	};
 
 
 	this.compruebaCuadrados = function(inicio,fin)
@@ -291,7 +289,5 @@ function TableroNQares(ancho, alto)
 		}
 		
 		return toret;
-	}
-    
-            
+	};      
 } 

@@ -1,4 +1,8 @@
-function cell1p(name){
+/*
+ * class cell for nqmines single player
+ */
+ 
+ function Cell1p(name){
 	
 	this.name = name;
 	
@@ -13,6 +17,5 @@ function cell1p(name){
 		toret += "><div class='mostrar'>&nbsp</div></div>";
 		
 		return toret;
-    }
-	
+    };
 }

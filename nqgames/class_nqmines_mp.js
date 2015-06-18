@@ -1,11 +1,9 @@
 /*
- * Clase tablero
- * representa o conxunto de casillas
- * @ancho representa o número de casillas en horizontal
- * @alto representa o número de casillas en vertical
+ * class TableroNQmines
+ * represents NQmines game
  */
-
-function TableroNQmines(ancho, alto)
+ 
+function NQmines2p(ancho, alto)
 {
     this.ancho = ancho; 
     this.alto  = alto;
@@ -35,7 +33,7 @@ function TableroNQmines(ancho, alto)
 			
 			for(var j=0; j<this.ancho;j++) {
 				var name = "celda-"+i+"-"+j;
-				var cell = new cell2p(name);
+				var cell = new Cell2p(name);
 				row.innerHTML += cell.getRepresentacion();
 			}
 			this.workarea.appendChild(row);	
@@ -44,7 +42,7 @@ function TableroNQmines(ancho, alto)
 		document.getElementById('casillasRestantes').innerHTML = this.restantes;
 		document.getElementById('puntosp1').innerHTML = this.puntosp1;
 		document.getElementById('puntosp2').innerHTML = this.puntosp2;
-    }
+    };
 	
 	this.seleccionaCelda = function(c)
 	{
@@ -86,7 +84,7 @@ function TableroNQmines(ancho, alto)
 		}
 	
 		return false;
-	}
+	};
 	
 	/*
 	 * función inicia()
@@ -102,7 +100,7 @@ function TableroNQmines(ancho, alto)
 		for(var i=0; i<this.alto;i++)
 		{
 			this.tablaMinas[i] = new Array();
-			for (j=0;j<this.ancho;j++)
+			for (var j=0;j<this.ancho;j++)
 			{
 				this.tablaMinas[i][j]=false;
 			}
@@ -112,7 +110,7 @@ function TableroNQmines(ancho, alto)
 		for(var i=0; i<this.alto;i++)
 		{
 			this.tablaSeleccion[i] = new Array();
-			for (j=0;j<this.ancho;j++)
+			for (var j=0;j<this.ancho;j++)
 			{
 				this.tablaSeleccion[i][j]=false;
 			}
@@ -136,7 +134,7 @@ function TableroNQmines(ancho, alto)
 				cont++;
 			}
 		}
-	}
+	};
 	
 	this.getX=function(c)
 	{
@@ -237,7 +235,7 @@ function TableroNQmines(ancho, alto)
 	
 		return toret;
 	
-	}
+	};
 	
 	this.sumaPuntos = function(n)
 	{
@@ -251,7 +249,7 @@ function TableroNQmines(ancho, alto)
 			this.puntosp2 += n;
 			document.getElementById('puntosp2').innerHTML = this.puntosp2;
 		}
-	}
+	};
 	
 	this.finalizaPartida = function()
 	{

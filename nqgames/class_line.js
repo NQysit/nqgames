@@ -1,10 +1,10 @@
 /*
- * Clase linea
- * representa cada unha das liñas que compoñen as casillas
- * @inicio representa o punto de inicio da liña (esquerda ou arriba)
- * @fin representa o punto de fin da liña (dereita ou abaixo)
+ * class Linea
+ * represents lines for NQares game
+ * @inicio - first coordenate
+ * @game - second coordenate
  */
-
+ 
 function Linea(inicio, fin)
 {  
     this.inicio = inicio;
@@ -21,7 +21,7 @@ function Linea(inicio, fin)
     }
     else
     {
-    	orientación = 'v';
+    	orientacion = 'v';
     	clase = 'lv';
     }
     
@@ -36,7 +36,7 @@ function Linea(inicio, fin)
     this.getidentificador = function()
     {
     	return this.identificador;
-    }
+    };
     
     /*
      * método getClicable
@@ -45,7 +45,7 @@ function Linea(inicio, fin)
     this.getClicable = function()
     {
     	return this.clicable;
-    }
+    };
     
      /*
      * función setClicable
@@ -54,7 +54,7 @@ function Linea(inicio, fin)
     this.setClicable = function(valor)
     {
     	this.clicable = valor;
-    }
+    };
     
     /*
      * función setClicable
@@ -64,7 +64,7 @@ function Linea(inicio, fin)
     this.setClicable = function(valor)
     {
     	this.clicable = valor;
-    }
+    };
     
     /*
      * función setClase
@@ -74,7 +74,7 @@ function Linea(inicio, fin)
     this.setClase = function(clase)
     {
     	this.clase=clase;
-    }
+    };
     
     /*
      * método getClase
@@ -83,7 +83,7 @@ function Linea(inicio, fin)
     this.getClase = function()
     {
     	return this.clase;
-    }
+    };
               
     /*
      * método getRepresentacion
@@ -93,11 +93,6 @@ function Linea(inicio, fin)
     {
     	var on = " onClick='javascript:tablero.pulsaLinea(this)'";
     	return "<div class='" + this.clase + "' id='" + this.id + "'" + on + "></div>\n";    
-    }
-    
-    
-    
-    
-    
+    };
         
 } //fin claseLinea

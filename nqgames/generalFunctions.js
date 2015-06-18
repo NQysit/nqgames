@@ -3,7 +3,6 @@
  * contents functions that will be used in all NQgames
  */
  
- 
 window.game = 0;
 /*
 * 1 - nqmines single player
@@ -21,7 +20,6 @@ window.turncolor = window.player1_color;
 window.rows = 5;
 window.cols = 11;
 window.tablero = null;
-
 
 ///<summary>
 ///clearWorkArea: empty the wotk area
@@ -213,50 +211,48 @@ function printConfigureMP() {
 	div.id = "configuraPartida";
 	
 	var p;
-	var spancolor;
 	var color;
-	var spanname;
 	var name;
 	var num;
 	
-	p = document.createElement("p");
+	p=document.createElement("p");
+	p.innerHTML = "Player 1";
+	div.appendChild(p);
 	
-	spancolor = document.createElement("span");
-	spancolor.innerHTML = "Player 1 Color";
+	p=document.createElement("p");
 	color = document.createElement("input");
 	color.type = "color";
 	color.value = window.player1_color;
 	color.id = "colorp1";
-	spanname = document.createElement("span");
-	spanname.innerHTML = "Player 1 Name";
 	name = document.createElement("input");
 	name.type = "text";
 	name.value = window.player1_name;
 	name.id = "namep1";
-	
-	p.appendChild(spancolor);
+
 	p.appendChild(color);
-	p.appendChild(spanname);
 	p.appendChild(name);
+	div.appendChild(p);
 	
-	spancolor = document.createElement("span");
-	spancolor.innerHTML = "Player 2 Color";
+	p=document.createElement("p");
+	p.innerHTML = "Player 2";
+	div.appendChild(p);
+	
+	p=document.createElement("p");
 	color = document.createElement("input");
 	color.type = "color";
 	color.value = window.player2_color;
 	color.id = "colorp2";
-	spanname = document.createElement("span");
-	spanname.innerHTML = "Player 2 Name";
 	name = document.createElement("input");
 	name.type = "text";
 	name.value = window.player2_name;
-	name.id = "namep2";
+	name.id = "namep2";	
 	
-	p.appendChild(spancolor);
 	p.appendChild(color);
-	p.appendChild(spanname);
 	p.appendChild(name);
+	div.appendChild(p);
 	
+	p=document.createElement("p");
+	p.innerHTML = "Dimensions";
 	div.appendChild(p);
 	
 	p = document.createElement("p");
@@ -264,11 +260,20 @@ function printConfigureMP() {
 	num.type = "number";
 	num.value = window.cols;
 	num.id = "inputCols";
+	num.min = 2;
+	num.max = 13;
 	p.appendChild(num);
+	
+	var spanx = document.createElement("span");
+	spanx.innerHTML = "X";
+	p.appendChild(spanx);
+	
 	num = document.createElement("input");
 	num.type = "number";
 	num.value = window.rows;
 	num.id = "inputRows";
+	num.min = 2;
+	num.max = 13;
 	p.appendChild(num);
 	
 	div.appendChild(p);
@@ -283,7 +288,6 @@ function printConfigureMP() {
 	btn.name = "btnPlay";
 	
 	btn.addEventListener("click", configureGame, false);
-	
 	
 	p.appendChild(btn);
 	div.appendChild(p);
@@ -476,12 +480,12 @@ function swapTurn() {
 }
 
 function nqaresMP() {
-	var toret = new TableroNQares(parseInt(window.cols, 10), parseInt(window.rows, 10)); 
+	var toret = new NQares2p(parseInt(window.cols, 10), parseInt(window.rows, 10)); 
 	return toret;
 }
 
 function nqminesMP() {
-	var toret = new TableroNQmines(parseInt(window.cols, 10), parseInt(window.rows, 10)); 
+	var toret = new NQmines2p(parseInt(window.cols, 10), parseInt(window.rows, 10)); 
 	return toret;
 }
 

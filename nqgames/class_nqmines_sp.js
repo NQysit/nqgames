@@ -1,3 +1,8 @@
+/*
+ * class NQmines1P
+ * represents NQmines single player game
+ */
+ 
 function NQmines1P(size) {
 	
 	//Variables Buscaminas
@@ -13,10 +18,7 @@ function NQmines1P(size) {
 	window.tempinicio;
 	this.workarea = document.getElementById("workarea");
 	
-	
-	
 	this.draw = function() {
-
 		
 		for(var i=0; i<this.dimension;i++) {
 			var row = document.createElement("div");
@@ -25,7 +27,7 @@ function NQmines1P(size) {
 			
 			for(var j=0; j<this.dimension;j++) {
 				var name = "celda-"+i+"-"+j;
-				var cell = new cell1p(name);
+				var cell = new Cell1p(name);
 				row.innerHTML += cell.getRepresentacion();
 			}
 			this.workarea.appendChild(row);	
@@ -77,7 +79,7 @@ function NQmines1P(size) {
 		}
 	
 		return false;
-	}
+	};
 	
 	this.marcaCelda = function (c)
 	{
@@ -119,7 +121,7 @@ function NQmines1P(size) {
 		}
 	
 		return false;
-	}
+	};
 	
 	/*
 	 * función inicia()
@@ -137,7 +139,7 @@ function NQmines1P(size) {
 		for(var i=0; i<this.dimension;i++)
 		{
 			this.tablaMinas[i] = new Array();
-			for (j=0;j<this.dimension;j++)
+			for (var j=0;j<this.dimension;j++)
 			{
 				this.tablaMinas[i][j]=false;
 			}
@@ -147,7 +149,7 @@ function NQmines1P(size) {
 		for(var i=0; i<this.dimension;i++)
 		{
 			this.tablaSeleccion[i] = new Array();
-			for (j=0;j<this.dimension;j++)
+			for (var j=0;j<this.dimension;j++)
 			{
 				this.tablaSeleccion[i][j]=false;
 			}
@@ -174,7 +176,7 @@ function NQmines1P(size) {
 				cont++;
 			}
 		}
-	}
+	};
 	
 	this.sumaTempo=function()
 	{
@@ -184,7 +186,7 @@ function NQmines1P(size) {
 			var dif = (t.getTime() - window.tempinicio.getTime()) / 1000;
 			document.getElementById("inputTempo").value = parseInt(dif);
 		}
-	}
+	};
 	
 	this.gameover=function(c)
 	{
@@ -196,14 +198,13 @@ function NQmines1P(size) {
 		//marca a culpable
 		document.getElementById(c).className = "celda error";
 	
-	
 		var div ='';
 		div += '<div class="alert-danger">';
 		div += 'Game Over!';
 		div += '</div>';
 		document.getElementById("divaviso").innerHTML = div;
 	
-	}
+	};
 	
 	this.finaliza=function()
 	{	
@@ -215,7 +216,7 @@ function NQmines1P(size) {
 		div += '</div>';
 		document.getElementById("divaviso").innerHTML = div;
 	
-	}
+	};
 	
 	this.desvelaMinas=function()
 	{
@@ -248,7 +249,7 @@ function NQmines1P(size) {
 	{
 		var toret = c.split("-")[2];
 		return toret;
-	}
+	};
 	
 	this.getProximas=function(x,y)
 	{
@@ -336,7 +337,7 @@ function NQmines1P(size) {
 	
 		return toret;
 	
-	}
+	};
 	
 	this.formulario=function() {
 		var toret ='';                  
@@ -351,8 +352,7 @@ function NQmines1P(size) {
 		var div = document.createElement("div");
 		div.innerHTML = toret;
 		return div;
-	}
-
+	};
 	   
 	this.progreso=function() {
 		var toret ='';
@@ -368,5 +368,5 @@ function NQmines1P(size) {
 		var div = document.createElement("div");
 		div.innerHTML = toret;
 		return div;
-	}
+	};
 }
